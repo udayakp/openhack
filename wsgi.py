@@ -4,9 +4,9 @@ application = Flask(__name__)
 
 @application.route("/")
 def hello():
+	aimodule.train()
 	return render_template('chat.html')
-    	aimodule.train()
-
+    	
 @app.route("/ask", methods=['POST'])
 def ask():
 	message = str(request.form['messageText'])
