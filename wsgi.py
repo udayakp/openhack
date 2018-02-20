@@ -14,10 +14,10 @@ def ask():
     while True:
         if message == "quit":
             aimodule.record()
-	    exit()
+	    #exit()
 	elif message == "save":
 	    aimodule.saveBrain("bot_brain.brn")
-	elif message == "#elp"
+	elif message == "#elp":
             aimodule.incident()
 	else:
 	    bot_response = aimodule.respond(message)
