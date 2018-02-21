@@ -7,21 +7,21 @@ def hello():
     aimodule.train()
     return render_template('chat.html')
     
-@app.route("/ask", methods=['POST'])
+@application.route("/ask", methods=['POST'])
 def ask():
-    message = str(request.form['messageText'])
     # kernel now ready for use
     while True:
+        message = str(request.form['messageText'])
         if message == "quit":
             aimodule.record()
-	elif message == "save":
-	    aimodule.saveBrain("bot_brain.brn")
-	elif message == "#elp":
+        elif message == "save":
+            aimodule.saveBrain("bot_brain.brn")
+        elif message == "#elp":
             aimodule.incident()
-	else:
-	    bot_response = aimodule.respond(message)
-	    # print bot_response
-	    return jsonify({'status':'OK','answer':bot_response})
+        else:
+            bot_response = aimodule.respond(message)
+            # print bot_response
+            return jsonify({'status':'OK','answer':bot_response})
 
 
 if __name__ == "__main__":
