@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import aimodule
 import aimfmodule
-import requests
+#import requests
 import json
 application = Flask(__name__)
 url = "http://10.123.79.234:9081/zosapiconnect/fetchapplicant/"
